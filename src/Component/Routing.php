@@ -14,6 +14,7 @@ class Routing {
     public function enroute($url){
         echo $url;
         $controllerToCall = array_search($url, $this->routes);
+        var_dump("Controller ". $controllerToCall);
         $controller = new $controllerToCall;
         $controller->build();
     }
