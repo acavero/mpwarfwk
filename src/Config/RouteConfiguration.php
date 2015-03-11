@@ -1,6 +1,6 @@
 <?php
 
 return array (
-    "Hello" => "HelloController.php",
+    "/Hello" => "HelloController.php",
 );
 
