@@ -1,5 +1,5 @@
 <?php
-namespace clases\Component;
+namespace src\Component;
 
 class Bootstrap{
     public function __construct(){
