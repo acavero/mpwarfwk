@@ -9,19 +9,14 @@ class Routing {
 
     public function __construct(){
         $this->routes = require(__DIR__ . '/../Config/RouteConfiguration.php');
-        $this->salute();
     }
 
     public function enroute($url){
         echo $url;
-        $controllerToCall = array_search($url, $this->routes);
-        var_dump($controllerToCall);
-        $controller = new $controllerToCall;
-        $controller->build();
+        return ($controllerToCall = array_search($url, $this->routes));
     }
     public function salute(){
         echo "Hola soy el routing";
-        var_dump($this->routes);
     }
 
 }
