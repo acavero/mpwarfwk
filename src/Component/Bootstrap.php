@@ -11,7 +11,8 @@ class Bootstrap{
         $routing = new Routing();
         $routing->salute();
         $currentUrl = $_SERVER['REQUEST_URI'];
-        $controller = $routing->enroute($currentUrl);
+        $controllerCalled = $routing->enroute($currentUrl);
+        $controller = new $controllerCalled;
         $controller->build();
 
     }
