@@ -6,8 +6,8 @@ class Routing {
 
     private $routes;
     public function __construct(){
-        require(__DIR__ . '/../Config/RouteConfiguration.php');
-        var_dump("var_dump");
+        $this->$routes = require(__DIR__ . '/../Config/RouteConfiguration.php');
+        $this->salute();
     }
 
     public function enroute($url){
@@ -15,5 +15,7 @@ class Routing {
     }
     public function salute(){
         echo "Hola soy el routing";
+        var_dump($this->routes);
+
     }
 }
