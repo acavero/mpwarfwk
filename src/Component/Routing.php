@@ -12,4 +12,7 @@ class Routing {
     public function enroute($url){
 
     }
+    public function salute(){
+        echo "Hola soy el routing";
+    }
 }
