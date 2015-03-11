@@ -1,5 +1,6 @@
 <?php
 namespace src\Component;
+use src\Controller;
 
 
 class Routing {
