@@ -13,10 +13,13 @@ class Routing {
 
     public function enroute($url){
         echo $url;
+        $controllerToCall = array_search($url, $this->routes);
+        $controller = new $controllerToCall;
+        $controller->build();
     }
     public function salute(){
         echo "Hola soy el routing";
         var_dump($this->routes);
-
     }
+
 }
