@@ -1,26 +1,9 @@
 {
-    "name": "root/mpwarfwk",
+    "name": "acavero/mpwarfwk",
     "license": "Apache-2.0",
-    "authors": [
-        {
-            "name": "Andres Cavero",
-            "email": "a.cavero.rodrigo@gmauil.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "repositories": [
-      {
-        "type" : "vcs",
-        "url": "https://github.com/acavero/mpwarfwk"
-      }
-    ],
-    "require": {
-      "php": ">=5.3.2",
-      "acavero/mpwarfwk": "dev-level"
-    },
     "autoload": {
       "psr-4": {
-        "" : "src/"
+        "root" : "src/"
       }
     }
 }
