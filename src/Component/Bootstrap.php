@@ -14,7 +14,6 @@ class Bootstrap{
         $controllerCalled = $routing->enroute($currentUrl);
         $controller = new $controllerCalled;
         $controller->build();
-
     }
 }
 
