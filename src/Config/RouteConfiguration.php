@@ -1,6 +1,6 @@
 <?php
 
 return array (
-    "HelloController" => "/Hello",
+    "src\\Config\\HelloController" => "/Hello",
 );
 
