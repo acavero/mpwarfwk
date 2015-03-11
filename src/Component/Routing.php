@@ -10,6 +10,8 @@ class Routing {
     }
 
     public function enroute($url){
+        echo $url;
+
 
     }
     public function salute(){

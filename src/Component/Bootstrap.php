@@ -7,9 +7,12 @@ class Bootstrap{
         $this->execute();
 
     }
-    public function execute(){
-    $routing = new Routing();
+    private function execute(){
+        $routing = new Routing();
         $routing->salute();
+        $currentUrl = $_SERVER['REQUEST_URI'];
+        $routing->enroute($currentUrl);
     }
 }
+
 
