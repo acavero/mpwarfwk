@@ -9,6 +9,7 @@ class Routing {
 
     public function __construct(){
         $rootDirectory = $_SERVER['DOCUMENT_ROOT'];
+        var_dump($rootDirectory);
         $this->routes = require($rootDirectory . '/app/Config/RouteConfiguration.php');
     }
 
