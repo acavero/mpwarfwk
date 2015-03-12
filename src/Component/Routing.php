@@ -8,7 +8,7 @@ class Routing {
     private $routes;
 
     public function __construct(){
-        $this->routes = require(__DIR__ . '/../Config/RouteConfiguration.php');
+        $this->routes = require('../../Config/RouteConfiguration.php');
     }
 
     public function enroute($url){
