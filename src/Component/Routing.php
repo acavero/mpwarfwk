@@ -12,10 +12,9 @@ class Routing {
     }
 
     public function enroute($url){
-        $controllerToCall = array_search($url, $this->routes);
-        var_dump("enroute ctocal " .$controllerToCall);
-        return $controllerToCall;
+        return ($controllerToCall = array_search($url, $this->routes));
     }
+
     public function salute(){
         echo "Hola soy el routing <br>";
     }

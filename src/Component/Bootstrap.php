@@ -10,8 +10,7 @@ class Bootstrap{
         $routing->salute();
         $currentUrl = $_SERVER['REQUEST_URI'];
         $controllerCalled = $routing->enroute($currentUrl);
-        var_dump(new $controllerCalled() . " Controlador en BOOTSTRAP");
-        new $controllerCalled();
+        var_dump( $controllerCalled . " Controlador en BOOTSTRAP");
     }
 }
 
