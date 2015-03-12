@@ -14,4 +14,12 @@ class Routing {
         $lowerUrl = strtolower($url);
         return ($controllerToCall = array_search($lowerUrl, $this->routes));
     }
+
+    public function isEmptyUrl($url){
+        if(($url) == '/')
+        {
+            return true;
+        }
+        return false;
+    }
 }
