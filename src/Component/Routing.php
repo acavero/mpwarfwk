@@ -8,7 +8,8 @@ class Routing {
     private $routes;
 
     public function __construct(){
-        $this->routes = require('app/Config/RouteConfiguration.php');
+        $rootDirectory = $_SERVER['DOCUMENT_ROOT'];
+        $this->routes = require($rootDirectory . '/app/Config/RouteConfiguration.php');
     }
 
     public function enroute($url){
