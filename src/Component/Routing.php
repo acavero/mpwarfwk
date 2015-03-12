@@ -7,16 +7,11 @@ class Routing {
 
     public function __construct(){
         $rootDirectory = $_SERVER['DOCUMENT_ROOT'];
-        var_dump($rootDirectory);
         $this->routes = require($rootDirectory . '/../app/Config/RouteConfiguration.php');
     }
 
     public function enroute($url){
-        return ($controllerToCall = array_search($url, $this->routes));
+        $lowerUrl = strtolower($url);
+        return ($controllerToCall = array_search($lowerUrl, $this->routes));
     }
-
-    public function salute(){
-        echo "Hola soy el routing <br>";
-    }
-
 }
