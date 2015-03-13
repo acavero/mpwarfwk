@@ -13,7 +13,7 @@ class Request {
     protected $url;
     protected $requestMethod;
 
-    public function __construc($url, $requestMethod){
+    public function __construct($url, $requestMethod){
         $this->url = $url;
         $this->requestMethod = $requestMethod;
     }
