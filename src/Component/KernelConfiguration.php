@@ -1,0 +1,32 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: andres
+ * Date: 13/03/15
+ * Time: 12:12
+ */
+
+namespace src\Config;
+
+
+class KernelConfiguration {
+    protected $enviromentConfiguration;
+
+    public function __construct(){
+        $rootDirectory = $_SERVER['DOCUMENT_ROOT'];
+        $this->enviromentConfiguration = require($rootDirectory . '/../app/Config/EnviromentConfiguration.php');
+    }
+
+    public function defineEnviroment(){
+        if($this->enviromentConfiguration["Enviroment"] === "Develop"){
+            echo "<h1> Entorno de Desarrollo </h1>";
+            echo "<br> Let's Code some shit <br>";
+            echo "<br> Debug Bar Activated <br>";
+            echo "<br> Error print Activated <br>";
+        }
+        if ($this->enviromentConfiguration["Enviroment"] === "Production"){
+            echo "<h1> Entorno de Producción </h1>";
+            echo "<br> Shit just got serious <br>";
+        }
+    }
+}
