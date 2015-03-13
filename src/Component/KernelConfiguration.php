@@ -6,7 +6,7 @@
  * Time: 12:12
  */
 
-namespace src\Config;
+namespace src\Component;
 
 
 class KernelConfiguration {
