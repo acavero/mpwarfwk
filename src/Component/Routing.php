@@ -11,8 +11,7 @@ class Routing {
     }
 
     public function enroute($url){
-        $lowerUrl = strtolower($url);
-        return ($controllerToCall = array_search($lowerUrl, $this->routes));
+        return ($controllerToCall = array_search($url, $this->routes));
     }
 
     public function isEmptyUrl($url){

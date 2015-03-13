@@ -10,5 +10,17 @@ namespace src\Component;
 
 
 class Request {
+    protected $url;
+    protected $requestMethod;
+
+    public function __construc($url, $requestMethod){
+        $this->url = $url;
+        $this->requestMethod = $requestMethod;
+    }
+
+    public function getUrl(){
+        return strtolower($this->url);
+    }
+
 
 }
