@@ -20,9 +20,9 @@ class KernelConfiguration {
     public function defineEnviroment(){
         if($this->enviromentConfiguration["Enviroment"] === "Develop"){
             echo "<h1> Entorno de Desarrollo </h1>";
+            echo "<br> Debug Bar: Activated <br>";
+            echo "<br> Error print: Activated <br>";
             echo "<br> Let's Code some shit <br>";
-            echo "<br> Debug Bar Activated <br>";
-            echo "<br> Error print Activated <br>";
         }
         if ($this->enviromentConfiguration["Enviroment"] === "Production"){
             echo "<h1> Entorno de Producción </h1>";
