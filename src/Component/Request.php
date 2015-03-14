@@ -10,17 +10,42 @@ namespace src\Component;
 
 
 class Request {
-    protected $url;
-    protected $requestMethod;
 
-    public function __construct($url, $requestMethod){
-        $this->url = $url;
-        $this->requestMethod = $requestMethod;
+    public function url(){
+        if(isset($_SERVER['REQUEST_URI']))
+        {
+        return strtolower($_SERVER['REQUEST_URI']);
+        }
     }
 
-    public function getUrl(){
-        return strtolower($this->url);
+    public function method(){
+        if (isset($_SERVER['REQUEST_METHOD']))
+        {
+            return $_SERVER['REQUEST_METHOD'];
+        }
     }
+
+    public function cookie($value){
+        if(isset($_COOKIE['$value']))
+        {
+            return $_COOKIE['$value'];
+        }
+    }
+
+    public function session($value){
+        if(isset($_SESSION['$value']))
+        {
+            return $_SESSION['$value'];
+        }
+    }
+
+    public function files($value){
+        if(isset($_FILES['$value']))
+        {
+            return $_FILES['$value'];
+        }
+    }
+
 
 
 }
