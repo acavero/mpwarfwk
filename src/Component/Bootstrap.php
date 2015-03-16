@@ -9,7 +9,9 @@ class Bootstrap{
 
         $routing = new Routing();
         $request->salute();
+
         $controllerCalled = $routing->enroute($request->url());
+        var_dump($controllerCalled);
         new $controllerCalled();
 
     }
