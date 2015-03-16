@@ -14,9 +14,9 @@ class Response {
     public function __construct(){
     }
 
-    public function jsonResponse($array){
+    public function jsonResponse(Array $array){
         return json_encode($array);
     }
 
-    
+
 }
