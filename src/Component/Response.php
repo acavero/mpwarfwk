@@ -12,6 +12,6 @@ namespace src\Component;
 class Response {
 
    public function jsonResponse(Array $array){
-       return json_encode($array);
+       var_dump(json_encode($array));
 }
 }
