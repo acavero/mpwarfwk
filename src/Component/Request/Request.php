@@ -6,10 +6,56 @@
  * Time: 17:58
  */
 
-namespace src\Component;
+namespace src\Component\Request;
 
 
 class Request {
+
+
+public $get;
+public $post;
+public $server;
+public $cookies;
+public $session;
+
+public function __construct(Session $session)
+{
+    $this->get = new Parameters($_GET);
+    $this->post = new Parameters($_POST);
+    $this->server = new Parameters($_SERVER);
+    $this->cookie = new Parameters($_COOKIE);
+    $this->session = $session;
+
+$_GET = $_POST = $_COOKIE = $_SERVER = array();
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public function url(){
         if(isset($_SERVER['REQUEST_URI']))

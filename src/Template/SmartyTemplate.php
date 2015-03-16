@@ -20,9 +20,10 @@ class SmartyTemplate implements TemplateInterface {
         //$template = ruta del template
         return $this->fetch($template);
     }
-    public assignVariables(){
-    foreach ($variables as $key=>$value){
-    $this->template->assign($key,$value);
+    public function assignVariables($variables){
+        foreach ($variables as $key=>$value){
+            $this->template->assign($key,$value);
+        }
+    }
 }
-}
-}
+
