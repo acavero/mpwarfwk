@@ -10,6 +10,5 @@ namespace src\Template;
 
 
 interface TemplateInterface {
-    public function draw($template);
-    public function assignVariables($variables);
+    public function draw($template, Array $variables);
 }

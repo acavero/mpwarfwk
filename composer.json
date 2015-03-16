@@ -7,7 +7,7 @@
       }
     },
   "require" : {
-    "smarty/smarty": "3.1.*",
-    "twig/twig": "2.0.*"
+    "smarty/smarty": "3.1.21",
+    "twig/twig": "1.18.0"
   }
 }

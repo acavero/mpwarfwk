@@ -11,18 +11,22 @@ namespace src\Template;
 
 class SmartyTemplate implements TemplateInterface {
 
-    public $template;
+    public $view;
+    const TEMPLATE_PATH = '../app/Template';
+
     public function __construct(){
-        $this->template = new Smarty();
+        $this->view = new \Smarty();
+        $this->view->setTemplateDir(self::TEMPLATE_PATH);
     }
 
-    public function draw($template){
-        //$template = ruta del template
-        return $this->fetch($template);
+    public function draw($template, Array $variables){
+
+        $this->view->assign($variables);
+        return $this->view->display($template);
     }
     public function assignVariables($variables){
         foreach ($variables as $key=>$value){
-            $this->template->assign($key,$value);
+            $this->view->assign($key,$value);
         }
     }
 }
