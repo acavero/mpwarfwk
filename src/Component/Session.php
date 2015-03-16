@@ -9,18 +9,30 @@
 namespace src\Component;
 
 
-class Session {
+class Session
+{
+    private $session;
 
-session
-construct(){
-session_start()
-}
-getValue(){
-    if !empty($_SESSION) ->getValue
-}
-setValue($value){
+    public function __construct()
+    {
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+            $this->session = $_SESSION;
+        }
+    }
+    public function getValue($key)
+        {
+            if (!empty($this->session[$key])){
+                return $this->session[$key];
 
+        }
 }
+
+        public function setValue($key, $value)
+        {
+            $this->session[$key] = $value;
+
+        }
 
 
 }
