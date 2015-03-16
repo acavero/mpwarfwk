@@ -12,10 +12,11 @@ namespace src\Component;
 class Response {
 
     public function __construct(){
-        echo "Response construida";
     }
 
-    public function jsonResponse(Array $array){
-       var_dump(json_encode($array));
-}
+    public function jsonResponse($array){
+        return json_encode($array);
+    }
+
+    
 }
