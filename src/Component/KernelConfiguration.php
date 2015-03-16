@@ -29,4 +29,14 @@ class KernelConfiguration {
             echo "<br> Shit just got serious <br>";
         }
     }
+
+    public function defineTemplate(){
+        if($this->enviromentConfiguration["Template"] === "Twig"){
+            echo "<br> Twig is the way to paint <br>";
+        }
+        if ($this->enviromentConfiguration["Template"] === "Smarty"){
+            echo "<br> Smarty is the way to paint <br>";
+        }
+    }
+
 }
