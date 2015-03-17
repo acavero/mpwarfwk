@@ -5,7 +5,6 @@ use src\Component\Request\Request;
 class Routing {
 
     private $routes;
-    private $request;
 
     public function __construct(){
         $this->routes = require('../app/Config/RouteConfiguration.php');
