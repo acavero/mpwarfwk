@@ -2,6 +2,7 @@
 namespace src\Component;
 
 use src\Component\Request\Request;
+use src\Component\Response;
 class Bootstrap{
     public function __construct(){
     }
@@ -11,6 +12,5 @@ class Bootstrap{
         $controllerCalled = $routing->enroute($request);
         var_dump($controllerCalled);
         new $controllerCalled();
-
     }
 }
