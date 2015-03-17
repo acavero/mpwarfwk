@@ -9,6 +9,6 @@ class Bootstrap{
     public function execute(Request $request){
         $routing = new Routing($request);
         $controllerCalled = $routing->enroute($request);
-        return $controllerCalled;
+        return (new $controllerCalled());
     }
 }
