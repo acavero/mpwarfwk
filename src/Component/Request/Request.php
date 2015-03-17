@@ -26,9 +26,15 @@ public function __construct()//Session $session)
     $this->cookie = new Parameters($_COOKIE);
     //$this->session = $session;
 
-$_GET = $_POST = $_COOKIE = $_SERVER = array();
+    $_GET = $_POST = $_COOKIE = $_SERVER = array();
 }
 
+    public function urlParser()
+    {
+        $urlToParse = $this->server->getValue('REQUEST_URI');
+        echo $urlToParse;
+
+    }
 
 
 
