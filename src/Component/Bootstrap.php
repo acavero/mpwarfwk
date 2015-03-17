@@ -7,9 +7,8 @@ class Bootstrap{
     }
     public function execute(Request $request){
 
-        $routing = new Routing();
-        $url = $request->server->getValue("REQUEST_URI");
-        $controllerCalled = $routing->enroute($url);
+        $routing = new Routing($request);
+        $controllerCalled = $routing->enroute($request);
         var_dump($controllerCalled);
         new $controllerCalled();
 
