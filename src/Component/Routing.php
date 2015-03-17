@@ -16,11 +16,5 @@ class Routing {
         return ($controllerToCall = array_search($url, $this->routes));
     }
 
-    public function isEmptyUrl($url){
-        if(($url) == '/')
-        {
-            return true;
-        }
-        return false;
-    }
+  
 }
