@@ -29,10 +29,6 @@ public function __construct()//Session $session)
 $_GET = $_POST = $_COOKIE = $_SERVER = array();
 }
 
-    public function salute(){
-        echo "magia";
-    }
-
 
 
 

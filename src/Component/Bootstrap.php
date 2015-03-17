@@ -8,8 +8,6 @@ class Bootstrap{
     public function execute(Request $request){
 
         $routing = new Routing();
-        $request->salute();
-
         $url = $request->server->getValue("REQUEST_URI");
         $controllerCalled = $routing->enroute($url);
         var_dump($controllerCalled);
