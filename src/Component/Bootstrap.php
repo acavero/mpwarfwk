@@ -9,21 +9,27 @@ class Bootstrap{
 
     }
     public function execute(Request $request){
-        // $this->actuationLogic($request);
         $routing = new Routing($request);
         $routing->url($request);
         $controller = array_shift($request->urlItems);
         $method = array_shift($request->urlItems);
         $params = $request->urlItems;
         $controllerCalled = $routing->controllerToCall($controller);
-        return call_user_func_array(array(new $controllerCalled, $method), array($params));
+        return $this->actuationLogic($controllerCalled, $method, $params);
     }
 
-    private function actuationLogic(Request $request){
-        $routing = new Routing($request);
-        $routing->url($request);
-        if (count($request->urlItems)<1){
-            die();
+    private function actuationLogic($controller, $method, $params){
+
+        if (empty($controller)){
+            return call_user_func(array(new IndexController(), "salute"));
         }
+        else{
+            if (is_null($method)){
+                $method = "salute";
+            };
+            return call_user_func_array(array(new $controller, $method), array($params));
+        }
+
+
     }
 }

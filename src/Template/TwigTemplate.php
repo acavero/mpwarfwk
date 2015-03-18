@@ -17,15 +17,16 @@ class TwigTemplate implements TemplateInterface{
     const TEMPLATE_CACHE_PATH = '../app/Template/Cache';
 
     public function __construct(){
-    $loader = new \Twig_Loader_Filesystem(self::TEMPLATE_PATH);
-    $this->twigInstance = new \Twig_Environment($loader,
-        array(
-            'cache' => self::TEMPLATE_CACHE_PATH,
-        ));
+        $loader = new \Twig_Loader_Filesystem(self::TEMPLATE_PATH);
+        $this->twigInstance = new \Twig_Environment($loader,
+            array(
+                'cache' => self::TEMPLATE_CACHE_PATH,
+            ));
 
     }
 
     public function draw($template, Array $variables){
-       return $this->view->render($template, $variables);
+
+        return $this->twigInstance->render($template, $variables);
     }
 }
