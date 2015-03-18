@@ -36,8 +36,6 @@ class Request {
         $urlToParse = $this->server->getValue('REQUEST_URI');
         $goodUrl = trim(filter_var($urlToParse, FILTER_SANITIZE_URL), '/');
         $this->urlItems = explode('/',$goodUrl);
-
-
     }
 
 

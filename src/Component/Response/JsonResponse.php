@@ -21,15 +21,14 @@ class JsonResponse {
 
 
     public function send(){
-        if (!($this->status === 200)){
+        if (($this->status != 200)){
             header("HTTP/1.0 404 Not Found");
         }
-        header('Content-Type: application/json');
-
-        echo $this->content;
         if(!(is_array($this->content)) ){
-         $this->content = array($this->content);
+
+            $this->content = array($this->content);
         }
-        return json_encode($this->content);
+        header("Content-Type: application/json");
+        echo json_encode($this->content);
     }
 }

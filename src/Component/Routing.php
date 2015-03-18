@@ -14,9 +14,9 @@ class Routing {
         $request->server->getValue("REQUEST_URI");
     }
 
-    public function controllerToCall($controller){
-        return ($controller = array_search($controller, $this->routes));
-
+    public function controllerToCall($controllerPath){
+        $controller = array_search($controllerPath, $this->routes);
+        return $controller;
     }
 
 

@@ -15,9 +15,10 @@ class HttpResponse {
     private $status;
 
     public function __construct($content, $status = 200){
-    $this->content = $content;
+        $this->content = $content;
         $this->status = $status;
     }
+
 
     public function send(){
         if (!($this->status === 200)){
