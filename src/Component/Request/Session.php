@@ -6,7 +6,7 @@
  * Time: 21:24
  */
 
-namespace src\Component;
+namespace src\Component\Request;
 
 
 class Session
