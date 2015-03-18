@@ -8,13 +8,15 @@ class Routing {
 
     public function __construct(){
         $this->routes = require('../app/Config/RouteConfiguration.php');
-
     }
 
-    public function enroute(Request $request){
-        $url = $request->server->getValue("REQUEST_URI");
-        $request->urlParser();
-        return ($controllerToCall = array_search($url, $this->routes));
+    public function url(Request $request){
+        $request->server->getValue("REQUEST_URI");
+    }
+
+    public function controllerToCall($controller){
+        return ($controller = array_search($controller, $this->routes));
+
     }
 
 
