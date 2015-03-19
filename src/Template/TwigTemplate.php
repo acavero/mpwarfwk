@@ -11,7 +11,7 @@ namespace src\Template;
 
 class TwigTemplate implements TemplateInterface{
 
-    private $view;
+
     private $twigInstance;
     const TEMPLATE_PATH = '../app/Template';
     const TEMPLATE_CACHE_PATH = '../app/Template/Cache';

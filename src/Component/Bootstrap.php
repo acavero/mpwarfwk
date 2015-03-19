@@ -2,7 +2,7 @@
 namespace src\Component;
 
 use src\Component\Request\Request;
-use src\Component\Response;
+use src\Component\Response\HttpResponse;
 
 class Bootstrap{
     public function __construct(){
@@ -13,16 +13,18 @@ class Bootstrap{
         $controller = array_shift($request->urlItems);
         $method = array_shift($request->urlItems);
         $params = $request->urlItems;
-        $controllerCalled = $routing->controllerToCall($controller);
-        return $this->actuationLogic($controllerCalled, $method, $params, $routing);
+        try {
+            $controllerCalled = $routing->controllerToCall($controller);
+            return $this->actuationLogic($controllerCalled, $method, $params, $routing);
+
+        }catch (\Exception $e)
+        {
+            return new HttpResponse("No existe la ruta, tío!", 404);
+
+        }
     }
 
     private function actuationLogic($controller, $method, $params, Routing $routing){
-
-        if (empty($controller))
-        {
-            $controller = $routing->controllerToCall('/');
-        }
         if (is_null($method))
         {
             $method = "salute";

@@ -11,7 +11,10 @@ class Routing {
 
     public function controllerToCall($controllerPath){
         $controller = array_search($controllerPath, $this->routes);
-        return $controller;
+        if ($controller){
+            return $controller;
+        }
+        throw new \Exception;
     }
 
 
