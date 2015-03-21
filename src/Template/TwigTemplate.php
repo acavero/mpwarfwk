@@ -25,8 +25,7 @@ class TwigTemplate implements TemplateInterface{
 
     }
 
-    public function draw($template, Array $variables){
-
-        return $this->twigInstance->render($template, $variables);
+    public function draw($template, $name=null, $variables=null){
+        return $this->twigInstance->render($template, array($name=>$variables));
     }
 }

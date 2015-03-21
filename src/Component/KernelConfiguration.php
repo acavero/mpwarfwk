@@ -19,23 +19,22 @@ class KernelConfiguration {
 
     public function defineEnviroment(){
         if($this->enviromentConfiguration["Enviroment"] === "Develop"){
-            /* echo "<h1> Entorno de Desarrollo </h1>";
-            echo "<br> Debug Bar: Activated <br>";
-            echo "<br> Error print: Activated <br>";
-            echo "<br> Let's Code some shit <br>"; */
+
+
         }
         if ($this->enviromentConfiguration["Enviroment"] === "Production"){
-            /* echo "<h1> Entorno de Producción </h1>";
-             echo "<br> Shit just got serious <br>"; */
+            error_reporting(0);
+
         }
     }
-
-    public function defineTemplate(){
-        if($this->enviromentConfiguration["Template"] === "Twig"){
-            /*   echo "<br> Twig is the way to paint <br>"; */
+    public function defineDatabase(){
+        if($this->enviromentConfiguration["Enviroment"] === "Develop") {
+            $databaseConfiguration = require ('../app/Config/DBConfig/DevelopDBConfiguration.php');
+            return $databaseConfiguration;
         }
-        if ($this->enviromentConfiguration["Template"] === "Smarty"){
-            /* echo "<br> Smarty is the way to paint <br>"; */
+        if ($this->enviromentConfiguration["Enviroment"] === "Production") {
+            $databaseConfiguration = require ('../app/Config/DBConfig/ProdDBConfiguration.php');
+            return $databaseConfiguration;
         }
     }
 

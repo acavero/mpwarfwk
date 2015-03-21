@@ -21,7 +21,8 @@ class HttpResponse {
 
 
     public function send(){
-        if (!($this->status === 200)){
+        if ($this->status != 200){
+
             header("HTTP/1.0 404 Not Found");
 
         }

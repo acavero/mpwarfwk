@@ -10,5 +10,5 @@ namespace src\Template;
 
 
 interface TemplateInterface {
-    public function draw($template, Array $variables);
+    public function draw($template, $name=null, $variables=null);
 }

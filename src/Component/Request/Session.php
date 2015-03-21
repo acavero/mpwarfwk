@@ -21,18 +21,18 @@ class Session
         }
     }
     public function getValue($key)
-        {
-            if (!empty($this->session[$key])){
-                return $this->session[$key];
+    {
+        if (!empty($this->session[$key])){
+            return $this->session[$key];
 
         }
-}
+    }
 
-        public function setValue($key, $value)
-        {
-            $this->session[$key] = $value;
+    public function setValue($key, $value)
+    {
+        $this->session[$key] = $value;
 
-        }
+    }
 
 
 }
